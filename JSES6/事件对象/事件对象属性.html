@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        div {
+            margin-bottom: 10px;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <script>
+        var div = document.querySelectorAll("div");
+        console.log(div[0]);
+
+        const say = function(e) {
+            //触发事件的对象
+            console.log(e.target);
+            //触发事件的类型
+            console.log(e.type);
+            //阻止冒泡事件
+            e.stopPropagation()
+            //阻止默认行为
+            e.preventDefalut()
+        };
+        div[0].addEventListener("click", say);
+        div[1].addEventListener("click", say);
+        div[2].addEventListener("click", say);
+    </script>
+</body>
+
+</html>

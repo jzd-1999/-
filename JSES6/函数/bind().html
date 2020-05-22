@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>点击1</button>
+    <button>点击2</button>
+    <button>点击3</button>
+    <script>
+        //bind()方法   改变 this 的指向
+        //用例场景  ：如果我们不需要立即执行这个函数，但又想改变这个函数内部的this指向，此时就用bind();
+        var obj = {
+            name: "json"
+        };
+        function fn(a, b){
+            console.log(this);
+            console.log(a + b);
+        }
+
+        //bind() 不会调用原来的函数 可以改变原来函数内部的this 指向
+        //返回的是原函数改变this之后产生的新函数
+
+        var f = fn.bind(obj,1,2);
+        f();
+        var btn = document.querySelectorAll('button');
+        for(var i = 0; i < btn.length; i++ ){
+            btn[i].onclick = function(){
+                this.disabled = true;
+                //写法1、声明一个that变量
+                var that = this;
+                setTimeout(function(){
+                    //写法1
+                    //that.disabled = false;
+                    //btn[i-1].disabled = false;    //此时的i 已经是3了 由于没有4个按钮，所以会报错
+                    this.disabled = false;
+                }.bind(this),3000)   //用bind()方法
+            }
+        }
+        // btn.onclick = function(){
+        //     this.disabled = true;
+        //     //var that = this;
+        //     setTimeout(function(){
+        //         //这个定时器函数里的 this 指向的是window  所以不行
+        //         this.disabled = false;   
+        //         //写法1、 在外部声明一个that变量存btn
+        //         //that.disabled = false;
+        //         //写法2、 用bind()方法；      
+        //     }.bind(this),3000)  //这个this指向的是 btn 这个对象
+
+        // }
+        var obj = {
+            age: 20,
+            say: function(){
+                console.log(this);
+            },
+            mov:()=>{
+                console.log(this);
+                
+            }
+        }
+        obj.say();
+        obj.mov();
+    </script>
+</body>
+</html>

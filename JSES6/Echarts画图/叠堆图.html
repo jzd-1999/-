@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>叠堆图</title>
+    <script src="../Tool/Echarts/echarts.js"></script>
+
+</head>
+<body>
+<div id="main" style="width: 800px;height: 600px;margin: 50px auto"></div>
+<script>
+    var myEcharts = echarts.init(document.getElementById('main'));
+    var option = {
+        title:{
+            text:'堆叠图区域',
+            left:20
+        },
+        tooltip:{
+          trigger:'axis',
+          axisPointer:{
+              type:'cross',
+              //坐标提示的背景颜色
+              label:{
+                  backgroundColor:"#6a7985"
+              }
+          }
+        },
+        legend:{
+            data:['邮件销售','联盟广告','视频广告','直接访问','搜索引擎']
+        },
+        xAxis:{
+            boundaryGap:false,
+            data:['周一','周二','周三','周四','周五','周六','周日','周周']
+        },
+        yAxis: {},
+        series:[
+            {name:'邮件销售',type:"line",areaStyle:{},stack:'总量',
+                //显示数据
+            label: {normal:{show:true,position:'top'}},
+            data:[22,12,32,42,23,56,12,33]},
+            {name:'联盟广告',type:'line',areaStyle:{},stack:'总量',
+            label: {normal:{show:true,position:'top'}},
+            data:[32,22,42,52,23,56,22,83]},
+            {name:'视频广告',type:'line',areaStyle:{},stack:'总量',
+            label: {normal:{show:true,position:'top'}},
+            data:[12,47,22,12,28,36,2,33]},
+            {name:'直接访问',type:'line',areaStyle:{},stack:'总量',
+            label: {normal:{show:true,position:'top'}},
+            data:[42,56,52,63,78,56,45,63]},
+            {name:'搜索引擎',type:'line',areaStyle:{},stack:'总量',
+            label: {normal:{show:true,position:'top'}},
+            data:[35,25,12,22,33,6,22,13]},
+        ]
+    };
+    myEcharts.setOption(option)
+</script>
+</body>
+</html>

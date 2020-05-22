@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        var father = document.querySelector("ul");
+        //方法一
+        var son = father.childNodes;
+        console.log(son);
+        //方法二
+        var sons = father.children;
+        console.log(sons);
+        //获取第一个元素节点和最后一个元素节点
+        console.log(father.firstChild);
+        console.log(father.lastChild);
+        //方法二
+        console.log(father.children[0]);
+        console.log(father.children[father.children.length - 1]);
+    </script>
+</body>
+
+</html>

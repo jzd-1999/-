@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>饼状图</title>
+    <script src="../Tool/Echarts/echarts.js"></script>
+
+</head>
+<body>
+
+
+<div id="main" style="width: 900px;height: 600px;border: 1px solid red;margin: 50px auto"></div>
+<script>
+    var myEcharts = echarts.init(document.getElementById('main'));
+
+    var option ={
+        //标题
+       title:{
+           //标题文字
+           text:'直方图',
+           //子标题
+           subtext:'wp直方图',
+           //标题样式
+           textStyle:{
+               //标题颜色
+               color:'green',
+               fontSize:16,
+               fontWeight:'bold',
+
+           },
+           //标题位置  left,top,right,bottom
+           top:10,
+           left:20,
+           //边框颜色 borderColor
+           borderColor:'red',
+           //边框宽度 borderWidth
+           borderWidth:5,
+           padding:[10,20]
+       },
+        //工具箱
+        toolbox:{
+           //是否显示
+           show:true,
+            //功能
+            feature:{
+                //保存图片
+                saveAsImage:{
+                    show:true
+                },
+                //数据视图
+                dataView:{
+                    show:true
+                },
+                //还原
+                restore:{
+                    show:true
+                },
+                //数据缩放视图
+                dataZoom:{
+                    show:true
+                },
+                //动态类型切换
+                magicType: {
+                    type:['line','bar']
+                }
+
+            }
+        },
+        tooltip:{
+           //X轴触发
+          trigger:'axis'
+        },
+        //图例
+        legend:{
+           data:['1','2']
+        },
+        //x轴
+        xAxis:{
+            name:'X轴',
+            type:'category',
+            data:['1','2','3','4','6','7'],
+            //坐标轴名称位置  start end center
+            nameLocation:'end',
+            //坐标轴名称样式
+            nameTextStyle:{
+                color:'red',
+                //文字风格  normal italic oblique
+                fontStyle:'italic'
+            },
+            //分隔区
+            boundaryGap:false,
+            alignWithLabel:true,
+            minorTick:{
+                show:true
+            }
+
+        },
+        //y轴
+        yAxis:{
+        },
+        //数据
+        series:[{
+           //数据名称
+            name:'销量',
+            //图形样式
+            type:'line',
+            //是否平滑曲线显示 true/0.5  false  或者number
+            smooth:0.5,
+
+            //data:[1,2,3,4,5,6,7,8,9,10],
+            data:[{name:'1',type:'line'}],
+            //分隔区
+            areaStyle:{},
+            //标记点
+            markPoint:{
+                data:[
+                    {type:'max',name:'最大值'},
+                    {type:'min',name:'最大值'},
+
+                ]
+            },
+            //标记线
+            markLine:{
+                data:[
+                    {type:'average',name:'平均值'}
+                ]
+            },
+            label: {
+                normal: {
+                    show: false,
+                    position: 'center'
+                },
+                // emphasis: {
+                //     show: true,
+                //     textStyle: {
+                //         fontSize: '30',
+                //         fontWeight: 'bold'
+                //     }
+                // }
+            },
+            labelLine: {
+                normal: {
+                    show: true
+                }
+            },
+        }]
+    };
+myEcharts.setOption(option)
+</script>
+</body>
+</html>

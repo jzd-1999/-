@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        var ul = document.querySelector("ul");
+        //nextSibling  下一代兄弟节点 包含元素节点或者文本节点等等
+        var son = ul.children[0];
+        console.log(son.nextSibling);
+        console.log(son.nextElementSibling);
+        console.log(son.previousSibling);
+        console.log(son.previousElementSibling);
+    </script>
+</body>
+
+</html>

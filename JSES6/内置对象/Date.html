@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+</head>
+
+<script></script>
+
+<body>
+<script>
+    //没有参数返回系统当前时间
+    var date = new Date();
+    console.log('date', date);
+    //参数常用的写法 数字型： 2019,10,1  或者是 字符串型 '2019-10-1 8:8:8'
+    var date1 = new Date(2019, 10, 1);
+    console.log('date1', date1); //返回的是 11月 不是 10月
+    var date2 = new Date("2019-10-1 8:8:8");
+    console.log('date2', date2);
+
+    //格式化日期
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;
+    var dates = date.getDate();
+    var hours = date.getHours();
+    hours = hours < 10 ? "0" + hours : hours;
+    var min = date.getMinutes();
+    min = min < 10 ? "0" + min : min;
+    var sec = date.getSeconds();
+    sec = sec < 10 ? "0" + sec : sec;
+    var day = date.getDay();
+    var days = [
+        "星期日",
+        "星期一",
+        "星期二",
+        "星期三",
+        "星期四",
+        "星期五",
+        "星期六"
+    ];
+
+    console.log(
+        year +
+        "年" +
+        month +
+        "月" +
+        dates +
+        "日" +
+        days[day] +
+        hours +
+        "时" +
+        min +
+        "分" +
+        sec +
+        "秒"
+    );
+</script>
+</body>
+
+</html>

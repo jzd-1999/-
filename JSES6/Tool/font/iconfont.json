@@ -1,0 +1,65 @@
+{
+  "id": "1619579",
+  "name": "测试练习",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "608351",
+      "name": "箭头",
+      "font_class": "jiantouarrow486",
+      "unicode": "e6aa",
+      "unicode_decimal": 59050
+    },
+    {
+      "icon_id": "608357",
+      "name": "箭头",
+      "font_class": "jiantouarrow492",
+      "unicode": "e6b0",
+      "unicode_decimal": 59056
+    },
+    {
+      "icon_id": "1089674",
+      "name": "添加",
+      "font_class": "webicon310",
+      "unicode": "e6a1",
+      "unicode_decimal": 59041
+    },
+    {
+      "icon_id": "1810267",
+      "name": "关闭",
+      "font_class": "icon-test",
+      "unicode": "e6e0",
+      "unicode_decimal": 59104
+    },
+    {
+      "icon_id": "5530901",
+      "name": "雪花",
+      "font_class": "snow",
+      "unicode": "e7ce",
+      "unicode_decimal": 59342
+    },
+    {
+      "icon_id": "8121733",
+      "name": "购物车 - 副本",
+      "font_class": "gouwuche-fuben",
+      "unicode": "e640",
+      "unicode_decimal": 58944
+    },
+    {
+      "icon_id": "11521660",
+      "name": "关闭",
+      "font_class": "guanbi",
+      "unicode": "e784",
+      "unicode_decimal": 59268
+    },
+    {
+      "icon_id": "11749343",
+      "name": "太阳",
+      "font_class": "taiyang",
+      "unicode": "e643",
+      "unicode_decimal": 58947
+    }
+  ]
+}

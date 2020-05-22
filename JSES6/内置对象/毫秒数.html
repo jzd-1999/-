@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+   
+</head>
+
+<body>
+   
+    <script>
+        //获取总毫秒数
+        //简单方法
+        var date = +new Date();
+        //getTime
+        var date1 = new Date();
+        var dates1 = date1.getTime();
+        //valueOf
+        var date2 = new Date();
+        var dates2 = date2.valueOf();
+        //H5新增方法
+        var now = Date.now();
+        console.log(date);
+        console.log(dates1);
+        console.log(dates2);
+        console.log(now);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //prototype（原型对象） 就是一个对象，这个对象的所有属性和方法，都会被构造函数所拥有。
+        //我们可以把那些不变的方法，直接定义在prototype对象上，这样所有对象的实例就可以共享这些方法。
+
+        function Start(name,age,sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+        }
+        Start.prototype.sing = function  () {
+            console.log("我是歌手");
+        }
+        var ldh = new Start("刘德华",55,"男");
+        var zxy = new Start("张学友",50,"男");
+        ldh.sing();
+        console.log(ldh);
+        
+        //思考：ldh这个实例对象没有sing()这个方法，为什么可以调用呢？
+        //因为有   __proto__   (对象原型)
+        //构造函数里有个prototype(原型对象)，它存放了sing，而实例对象的__proto__指向了prototype，所以可以调用sing()
+</script>
+</body>
+</html>

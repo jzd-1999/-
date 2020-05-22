@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+          //父类构造函数
+        function Father(name,age) {
+            //this 指向父构造函数的对象实例
+            this.name = name;
+            this.age = age;
+        }
+        Father.prototype.money = function (){
+            console.log("我挣了1000万");
+        }
+        function Son(name,age,sex) {
+            // this 指向子构造函数的对象实例
+            Father.call(this,name,age);        //用这一句话就可以调用父构造函数的属性了
+            //自己的属性
+            this.sex = sex
+        }
+       
+
+        //这样赋值会有问题，如果修改了子原型对象，父原型对象也会跟着一起改变
+        Son.prototype = Father.prototype
+        //解决方法：
+        Son.prototype = new Father();
+        //如果利用对象的形式修改了原型对象，别忘了利用constructor 指回原来的原型对象 
+        Son.prototype.exam = function(){
+            console.log("我要考试");
+            
+        }
+        //子构造函数
+       
+       
+        var son = new Son('马云',60,'男')
+        console.log(son);
+        
+        console.log(Father.prototype);
+        
+        
+        
+        
+    </script>
+    
+</body>
+</html>

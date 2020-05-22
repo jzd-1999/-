@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //constructor的作用就是告诉我们你这个对象是通过哪个构造函数构造出来的
+        function Start(name,age) {
+            this.name = name;
+            this.age = age;
+        }
+        /*Start.prototype.sing = function () {
+            console.log("我会唱歌");
+        }
+        Start.prototype.dance = function (){
+            console.log("我会跳舞");
+        }*/
+
+        var ldh = new Start('刘德华',20)
+        var zxy = new Start('张学友',22)
+        //没有对象是因为 新添加的对象把原来的构造函数覆盖了 所以没有constructor
+        
+        
+
+        Start.prototype = {
+            //如果我们修改了原来的原型对象，给原型对象赋值的是一个对象，则必须手动的利用constructor指回原来的构造函数
+            constructor:Start,
+            sing:function(){
+                console.log('我会唱歌');
+            },
+            dance:function(){
+                console.log('我会跳舞');
+            }
+
+        }
+        console.log(Start.prototype.constructor);
+        console.log(ldh.__proto__.constructor);
+
+        //构造函数，实例对象，原型对象三者之间的关系
+        /*
+            构造函数.prototype  ——————————> 原型对象
+            构造函数  <———————————— 原型对象.prototype.constructor
+            实例对象.__proto__  ——————————> 原型对象
+            实例对象.__proto__.constructor ——————————> 构造函数        
+        */
+            
+</script>
+</body>
+</html>

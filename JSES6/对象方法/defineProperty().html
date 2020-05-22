@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+var obj = {
+    id: 1,
+    pname: "小米",
+    price: 1999
+}
+//defineProperty()  定义新属性或者修改原有的属性
+/*使用方法：
+    Object.defineProperty(obj（对象名）,prop（属性）,descriptor（特性）)  注意：第三个参数descriptor 以对象形式{}书写
+    descriptor{
+        value：设置属性值，默认为 undefined
+        writable：值是否可以重写  true|false 默认为false
+        enumerable：目标属性是否可以被枚举，true|false 默认为false   (简单的说就是是否可以被遍历出来 )
+        configurable：目标属性是否可以被删除或者是否可以再次被修改特性 true|false 默认false
+    }
+*/
+//obj里面没有num属性，所以就添加了num属性
+Object.defineProperty(obj,'num',{
+    value: 1000
+})
+console.log(obj);
+
+//obj里面有price属性，所以就修改了price属性
+Object.defineProperty(obj,'price',{
+    value: 999
+})
+console.log(obj);
+
+//
+Object.defineProperty(obj,'id',{
+    writable: false
+})
+console.log(obj);
+
+Object.defineProperty(obj,"heihei",{
+    value: "女",
+    writable: false,
+    enumerable: true,
+    configurable: false
+})
+console.log(Object.keys(obj))
+
+delete obj.heihei;
+console.log(obj);
+
+</script>

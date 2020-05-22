@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+    </ul>
+    <script>
+        var li = document.querySelector("li");
+        //得到的是离元素最近的父级节点
+        var ul = li.parentNode;
+        console.log(ul);
+    </script>
+</body>
+
+</html>
